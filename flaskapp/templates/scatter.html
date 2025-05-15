@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ title }} </h1>
+    <div id='chart' class='chart'></div>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script type='text/javascript'>
+        var graph2 = {{graph2JSON | safe}};
+        Plotly.newPlot('chart', graph2.data, graph2.layout);
+    </script>
+    <div>
+        <br>
+        <p>
+            <b>
+                Interpretation:
+            </b>
+            The graph shows that as the percentage of females in a consitutency increases, the voter turnout for the general elections of 2019 increases. This supports the relevance of looking at female voters as a target for the next campaign as they are more inclined to vote. It is key to note that the 50% female population mark is a clear demarcation line after which the relationship becomes less strong. This meahs that areas with relatively very few women there is a clear negative correlation with voter turnout. Meanwhile, areas with a more even distribution of males and females display both high and lowe voter turn-out. However, the density of points when moving to the right and above the 65% turn out rate does show that there is a link between female population and voter turn out.
+There does not seem to be a significant difference between countries in the UK. So, the upcoming party is partly right but based on the graph, the relationship is not strong enough that a strategy focussed on constituencies with a majority of women is particularly helpful in securing areas with higher voter turn-out. 
+        </p>
+    </div>
+{% endblock %}

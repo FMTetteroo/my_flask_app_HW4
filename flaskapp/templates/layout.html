@@ -4,18 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    <style>
+        .navbar {
+            background-color:#c04154;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px 0; 
+            width: 100%; 
+        }
+    .nav-text {
+    color: #c04154;
+    font-family: 'Open Sans';
+    font-weight: 900;
+    font-size:x-large;
+    transition: color 0.3s ease;
+}
+.nav-header {
+    color: #c04154;
+    font-family: 'Open Sans';
+    font-weight: 1200;
+    font-size:xx-large;
+    text-transform: uppercase;
+}
+.containter{
+    background-color: lightsteelblue;
+    min-width: 100%;
+}
+
+</style>
+
 </head>
 <body>
-<header>
+<header class = "containter">
     <div id="container">
-        <h1 class="logo">My web app</h1>
+        <h1 class="nav-header">My political interpretation website</h1>
         <strong>
-            <nav>
-                <ul class="menu">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
-                    <li><a href="{{ url_for('new_post') }}">New post</a></li>
-                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <nav class = "navbar">
+                <ul class = "menu">
+                    <li><a class = "nav-text" href="{{ url_for('home') }}">Home</a></li>
+                    <li><a  class = "nav-text" href="{{ url_for('about') }}">About</a></li>
+                    <li ><a class = "nav-text" href="{{ url_for('new_post') }}">New post</a></li>
+                    <li ><a class = "nav-text" href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li ><a class = "nav-text" href="{{ url_for('scatter') }}">Scatter</a></li>
+                    <li ><a class = "nav-text" href="{{ url_for('barplot') }}">Barplot</a></li>
                 </ul>
             </nav>
         </strong>

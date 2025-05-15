@@ -1,5 +1,30 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>{{ title }}</h1>
-    <p>This is where I'll write something about myself.</p>
+<style>
+    .myDiv {
+    border: solid #c04154 5px;
+    padding-bottom: 20px;
+    background-color:  lightsteelblue;
+    text-align: center;
+    font-family: 'Times New Roman';
+    }
+    </style>
+    </head>
+<body>
+    <div class="myDiv">
+    {% if heading %}
+        <h1>{{ heading }}</h1>
+    {% else %}
+        <h1>About Me:</h1>
+    {% endif %}
+        <h2>Dutch, Opinionated, Hertie Student, Energy Nerd </h2>
+        <p> Hi! I am passionate about combining data science, public policy and the energy transition. 
+            <br> Grid congestion and CO2-free flexible power are of particular interest as they combine political struggles, technical boundaries and financial limits. <br> 
+            Next to Hertie, I am co-coordinator of the EPPC content team, organisor of Platform Energy Pioneers and part of the Women in Sustainability program. 
+            <br> Books, films and running are the ultimate ways to explore new worlds and clear my head. <br> </p>
+            <a href="https://www.linkedin.com/in/franka-tetteroo-0b811020b/?originalSubdomain=nl">MyLinkedIn!</a>
+            <br> <br>
+        <br><img src="{{url_for('static', filename='franka.png')}}"<br> 
+    </div>
+    </body>
 {% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <div id="chart" class="chart"></div>
+  <style>
+    #chart {
+      height: 600px !important;
+    }
+  </style>
+  
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript">
+    var graph1 = {{ graph1JSON | safe }};
+    Plotly.newPlot('chart', graph1.data, graph1.layout);
+  </script>
+  <br>
+  <p>
+    <b>Interpretation:</b>
+    This graph shows the policy advisor the voting behaviour of the five constituencies with the smallest and largest female population in the UK. It is important to note that neither group (small vs large female population) shows a similar voting pattern as different parties dominate different constituencies; Labour dominates in East Harm, Bristol West and Poplar and Limehouse, which is not the case for Cities of London and Westminster nor Glasgow Central. Similarly for the female dominated constituencies, the conservatives dominated New forest West and Clacton whilst SNP overpowers the votes in both Glasgow Southwest and East. Regional party affiliations and economic factors may hence explain the voting behaviour better than the (slight) majority of women in a constituency. The policy advisor is therefore unable to identify clear party preferences in female dominated constituencies and will have another way to inform its campaign choices. 
+  </p>
+{% endblock %}
